@@ -8,7 +8,7 @@ import useSWR from 'swr'
 import AppTable from '@/components/app.table'
 import { IBlog } from '@/types/backend'
 
-export default function Home() {
+export default function Blogs() {
   const fetcher = async (url: string) => {
     const res = await fetch(url)
     const data = await res.json()
@@ -31,16 +31,6 @@ export default function Home() {
 
   return (
     <>
-      <Link href="/dashboard">
-        <Button variant='primary'>
-          Dashboard
-        </Button>
-      </Link>
-      <Link href="/tictactoe">
-        <Button variant='success'>
-          Tictactoe
-        </Button>
-      </Link>
       {data && <AppTable blogs={data?.sort((a: IBlog, b: IBlog) => b.id - a.id)}/>}
   </>
   )

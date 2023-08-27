@@ -1,8 +1,10 @@
-import './globals.css'
+'use client'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from '@/components/header'
+import { Container } from 'react-bootstrap'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,9 +18,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <nav>Root Layout</nav>
-        {children}
+      <body>
+        <Container>
+          <Header />
+          {children}
+        </Container>
+        <ToastContainer position="bottom-center" autoClose={1000}/>
       </body>
     </html>
   )
