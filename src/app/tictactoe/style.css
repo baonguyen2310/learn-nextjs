@@ -1,0 +1,19 @@
+.tictactoe-content {
+    display: flex;
+}
+
+.board-container {
+    
+}
+
+.board-row {
+    display: flex;
+}
+
+.square {
+    border: 2px solid skyblue;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 3rem;
+}
